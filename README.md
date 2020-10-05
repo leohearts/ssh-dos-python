@@ -1,5 +1,5 @@
 # ssh-dos-python
-Denial of service for ssh with python
+"Mild" denial of service for ssh with python
 
 ### Requirements
 
