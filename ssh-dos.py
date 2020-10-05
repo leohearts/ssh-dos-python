@@ -7,7 +7,12 @@ import _thread as thread
 
 HOST = argv[1]
 USERNAME = 'root'
-CONCURRENT = 100
+CONCURRENT = 140
+
+try:
+    CONCURRENT = int(argv[2])
+except:
+    pass
 
 count = 0
 
