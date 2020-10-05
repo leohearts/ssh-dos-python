@@ -1,6 +1,10 @@
 # ssh-dos-python
 Denial of service for ssh with python
 
+### Requirements
+
+```pip install ssh-python```
+
 ### Usage
 
 ```shell
@@ -31,6 +35,6 @@ python3 ssh-dos.py [host] [CONCURRENT](optional, default=140)
 
 ~~开一下对面靶机ssh都登上不去, 还玩个毛线~~
 
-### 效果:
+### Screenshot:
 
 ![img](demo.webp)
