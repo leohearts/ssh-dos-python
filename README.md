@@ -3,7 +3,7 @@
 
 ### Requirements
 
-```pip install ssh-python```
+```pip3 install ssh-python```
 
 ### Usage
 
