@@ -34,7 +34,6 @@ def go():
 def threadStarter():
     for i in range(CONCURRENT):
         thread.start_new_thread(go, ())
-        sleep(0.01)
 
 if __name__ == "__main__":
     while True:
