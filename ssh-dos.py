@@ -39,7 +39,7 @@ def threadStarter():
 if __name__ == "__main__":
     while True:
         thread.start_new_thread(threadStarter, ())
-        sleep(LoginGraceTime)
+        sleep(LoginGraceTime - 1)
         #sleep(0.1)
         
     sleep(2147483647)
